@@ -1,12 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="ru">
-  <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Romtuck</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
-  </head>
 <body>
 
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
