@@ -11,7 +11,7 @@
 
 
 <main class="container">
-  <div class="col-md-12">
+  <div class="col-md-13">
   <h1>Проекты</h1>
 
   <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
