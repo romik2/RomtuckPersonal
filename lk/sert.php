@@ -16,7 +16,7 @@
             <h1 class="h2">Управление сертификатами</h1>
           </div>
         <a class="btn btn-outline-primary" href="login.php">Добавить</a>
-        
+
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>

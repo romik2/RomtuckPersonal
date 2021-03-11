@@ -16,6 +16,7 @@
             <h1 class="h2">Проекты</h1>
           </div>
         <a class="btn btn-outline-primary" href="login.php">Добавить</a>
+        <a class="btn btn-outline-dark" href="login.php">Добавить тэг</a>
         
           <div class="table-responsive">
             <table class="table table-striped table-sm">
