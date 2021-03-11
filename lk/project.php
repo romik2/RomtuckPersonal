@@ -25,20 +25,26 @@
                   <th>#</th>
                   <th>Название</th>
                   <th>Дата публикации</th>
-                  <th>Теги</th>
+                  <th>Тег</th>
                   <th>Ссылка</th>
                 </tr>
               </thead>
               <tbody>
-
+                <?php  
+                  include_once('../api/sql.php');
+                  $array = SelectSql("project", "tag", "id", "id_tag");
+                  $k = 0;
+                  $i = 0;
+                  while ($k < round(count($array) / 7)):
+                ?>
                 <tr>
-                  <td>1</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
+                  <td><?php echo $array[$i];?></td>
+                  <td><?php echo $array[$i+1]?></td>
+                  <td><?php echo $array[$i+3]?></td>
+                  <td><?php echo $array[$i+7]?></td>
+                  <td><?php echo $array[$i+4]?></td>
                 </tr>
-
+                <?php $k++; $i=+7; endwhile;?>
               </tbody>
             </table>
           </div>

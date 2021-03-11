@@ -15,8 +15,24 @@
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Управление пользователями</h1>
           </div>
-        <a class="btn btn-outline-primary" href="login.php">Добавить</a>
-        <a class="btn btn-outline-dark" href="login.php">Добавить роль</a>
+          <button class = "btn btn-outline-primary" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Добавить</button>
+          <a class="btn btn-outline-dark" href="login.php">Добавить роль</a>
+
+          <div id="id01" class="modal">
+  
+            <form class="modal-content container animate">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+              <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+              <label for="inputEmail" class="visually-hidden">Логин</label>
+              <input type="text" id="inputEmail" class="form-control mb-3" placeholder="Логин" required="" autofocus="">
+              
+              <label for="inputPassword" class="visually-hidden">Пароль</label>
+              <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Пароль" required="">
+
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            </form>
+
+          </div>
         
           <div class="table-responsive">
             <table class="table table-striped table-sm">
@@ -24,21 +40,27 @@
                 <tr>
                   <th>#</th>
                   <th>ФИО</th>
-                  <th>Дата регистрации</th>
                   <th>Логин</th>
                   <th>Роль</th>
+                  <th>Действие</th>
                 </tr>
               </thead>
               <tbody>
-
+                <?php  
+                  include_once('../api/sql.php');
+                  $array = SelectSql("users", "roles", "id", "id_role");
+                  $k = 0;
+                  $i = 0;
+                  while ($k < round(count($array) / 7)):
+                ?>
                 <tr>
-                  <td>1</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
-                  <td>placeholder</td>
+                  <td><?php echo $array[$i];?></td>
+                  <td><?php echo $array[$i+1]." ".$array[$i+2]." ".$array[$i+3];?></td>
+                  <td><?php echo $array[$i+4];?></td>
+                  <td><?php echo $array[$i+6];?></td>
+                  <td><a class="w-45 btn btn-md-2 btn-success" href="login.php">Редактировать</a> <a class="w-45 btn btn-md-2 btn-danger" href="login.php">Удалить</a></td>
                 </tr>
-
+                <?php $k++; $i=+7; endwhile;?>
               </tbody>
             </table>
           </div>
