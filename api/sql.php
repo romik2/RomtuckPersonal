@@ -15,7 +15,7 @@ function SelectMySql($sql)
         $results[$i+5] = $row[5];
         $results[$i+6] = $row[6];
         $results[$i+7] = $row[7];
-        $i =+ 7;
+        $i = $i + 8;
     }
 
     return $results;

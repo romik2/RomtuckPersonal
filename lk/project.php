@@ -33,9 +33,10 @@
                 <?php  
                   include_once('../api/sql.php');
                   $array = SelectSql("project", "tag", "id", "id_tag");
+                  print_r($array);
                   $k = 0;
                   $i = 0;
-                  while ($k < round(count($array) / 7)):
+                  while ($k < round(count($array) / 8)):
                 ?>
                 <tr>
                   <td><?php echo $array[$i];?></td>
@@ -44,7 +45,7 @@
                   <td><?php echo $array[$i+7]?></td>
                   <td><?php echo $array[$i+4]?></td>
                 </tr>
-                <?php $k++; $i=+7; endwhile;?>
+                <?php $k++;  $i = $i + 8; endwhile;?>
               </tbody>
             </table>
           </div>
