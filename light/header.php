@@ -4,7 +4,7 @@
       <a class="p-2 text-dark" href="index.php">Проекты</a>
       <a class="p-2 text-dark" href="https://vk.com/romtuck">Мой вк</a>
       <a class="p-2 text-dark" href="support.php">Поддержка</a>
-      <a class="p-2 text-dark" href="#">Сертификаты</a>
-      <a class="btn btn-outline-primary" href="#">Войти</a>
+      <a class="p-2 text-dark" href="sert.php">Сертификаты</a>
+      <a class="btn btn-outline-primary" href="login.php">Войти</a>
     </nav>
 </header>
