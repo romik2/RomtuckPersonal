@@ -9,9 +9,9 @@
     <nav class="my-2 my-md-0 me-md-3 float-right">
       <a class="p-2 text-light" href="index.php">Проекты</a>
       <a class="p-2 text-light" href="https://vk.com/romtuck">Мой вк</a>
-      <a class="p-2 text-light" href="support.php">Поддержка</a>
+      <!-- <a class="p-2 text-light" href="support.php">Поддержка</a> -->
       <a class="p-2 text-light" href="sert.php">Сертификаты</a>
-      <a class="btn btn-outline-primary" href="login.php">Войти</a>
+      <?php include_once('../api/header_lk.php');?>
     </nav>
     </div>
 </header>

@@ -10,7 +10,7 @@
 
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <div class="nav-link">Выйти</div>
+      <a class="nav-link" href="../api/logout.php">Выйти</a>
     </li>
   </ul>
 </header>

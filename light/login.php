@@ -10,17 +10,17 @@
 <?php include_once('header.php')?>
 
 
-<main class="form-signin container">
-  <form>
+<main class="form-signin container" >
+  <form method="POST"  action="/api/button.php">
     <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <label for="inputEmail" class="visually-hidden">Логин</label>
-    <input type="text" id="inputEmail" class="form-control mb-3" placeholder="Логин" required="" autofocus="">
+    <input type="text" name="login" id="name" class="form-control mb-3" placeholder="Логин" required="" autofocus="">
     
     <label for="inputPassword" class="visually-hidden">Пароль</label>
-    <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Пароль" required="">
+    <input type="password" name="password" id="inputPassword" class="form-control mb-3" placeholder="Пароль" required="">
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+    <button name = "loginBut" class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
   </form>
 </main>
 
