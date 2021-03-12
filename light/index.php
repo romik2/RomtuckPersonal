@@ -18,7 +18,7 @@
                   $array = SelectSql("project", "tag", "id", "id_tag");
                   $k = 0;
                   $i = 0;
-                  while ($k < round(count($array) / 8)):
+                  while ($k < round(count($array) / 24)):
                 ?>
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
@@ -29,7 +29,7 @@
           <a href="<?php echo $array[$i+4]?>" class="stretched-link">GitHub</a>
         </div>
       </div>
-      <?php $k++;  $i = $i + 8; endwhile;?>
+      <?php $k++;  $i = $i + 24; endwhile;?>
 
     </div>
 </main>

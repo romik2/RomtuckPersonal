@@ -51,7 +51,7 @@
                   $array = SelectSql("users", "roles", "id", "id_role");
                   $k = 0;
                   $i = 0;
-                  while ($k < round(count($array) / 8)):
+                  while ($k < round(count($array) / 24)):
                 ?>
                 <tr>
                   <td><?php echo $array[$i];?></td>
@@ -60,7 +60,7 @@
                   <td><?php echo $array[$i+6];?></td>
                   <td><a class="w-45 btn btn-md-2 btn-success" href="login.php">Редактировать</a> <a class="w-45 btn btn-md-2 btn-danger" href="login.php">Удалить</a></td>
                 </tr>
-                <?php $k++;  $i = $i + 8; endwhile;?>
+                <?php $k++;  $i = $i + 24; endwhile;?>
               </tbody>
             </table>
           </div>

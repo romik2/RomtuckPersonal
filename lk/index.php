@@ -29,14 +29,20 @@
                 </tr>
               </thead>
               <tbody>
-
+              <?php  
+                  include_once('../api/sql.php');
+                  $array = SelectSql("logs", "users", "id", "id_users");
+                  $k = 0;
+                  $i = 0;
+                  while ($k < round(count($array) / 24)):
+                ?>
                 <tr>
-                  <td>1</td>
-                  <td>random</td>
-                  <td>data</td>
-                  <td>placeholder</td>
+                  <td><?php echo $array[$i];?></td>
+                  <td><?php echo $array[$i+1]?></td>
+                  <td><?php echo $array[$i+2]?></td>
+                  <td><?php echo $array[$i+8]." (".$array[$i+5]." ".$array[$i+6]." ".$array[$i+7].")";?></td>
                 </tr>
-
+                <?php $k++;  $i = $i + 24; endwhile;?>
               </tbody>
             </table>
           </div>
