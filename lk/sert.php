@@ -30,6 +30,7 @@
               <tbody>
               <?php  
                   include_once('../api/sql.php');
+                  SessionSel();
                   $array = SelectSql("sert", "users", "id", "id_users");
                   $k = 0;
                   $i = 0;

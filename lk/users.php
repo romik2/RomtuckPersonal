@@ -48,6 +48,7 @@
               <tbody>
                 <?php  
                   include_once('../api/sql.php');
+                  SessionSel();
                   $array = SelectSql("users", "roles", "id", "id_role");
                   $k = 0;
                   $i = 0;

@@ -1,7 +1,7 @@
 <?php
     $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    include_once('config.php');
-
+    include_once('sql.php');
+    $link = Config();
     function generate_string($input, $strength = 16) {
         $input_length = strlen($input);
         $random_string = '';

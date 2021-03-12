@@ -1,9 +1,24 @@
 <?php
 
+function Config()
+{
+    $host = 'localhost'; // адрес сервера 
+    $database = ''; // имя базы данных
+    $user = ''; // имя пользователя
+    $password = ''; // пароль
+
+    // подключаемся к серверу
+    $link = mysqli_connect($host, $user, $password, $database) 
+        or die("Ошибка " . mysqli_error($link));
+
+    $link->set_charset("utf8");
+    return $link;
+}
+
 function SelectMySql($sql)
 {
-    include_once('config.php');
-    $result = mysqli_query($link, $sql);
+    
+    $result = mysqli_query(Config(), $sql);
 
     $i = 0;
     while ($row = mysqli_fetch_array($result)) {
@@ -47,6 +62,27 @@ function SelectMSql($table)
 {
     $sql = "SELECT * FROM ".$table;
     return SelectMySql($sql);
+}
+
+function SessionSel()
+{
+    if (!isset($_COOKIE['session']))
+    {
+        echo '<script>location.replace("/index.php");</script>'; exit;
+    }
+    else
+    {
+        $sqls = "SELECT count(sessions.session) FROM sessions INNER JOIN users ON sessions.id_users = users.id WHERE sessions.session = '".$_COOKIE['session']."'";
+        $resultsc = mysqli_query(Config(), $sqls);
+    
+        while ($row = mysqli_fetch_array($resultsc))
+        {
+            if($row[0] == 0)
+            {
+                echo '<script>location.replace("/api/logout.php");</script>'; exit;
+            }
+        }
+    }
 }
 
 ?>

@@ -32,6 +32,7 @@
               <tbody>
                 <?php  
                   include_once('../api/sql.php');
+                  SessionSel();
                   $array = SelectSql("project", "tag", "id", "id_tag");
                   $k = 0;
                   $i = 0;
