@@ -3,9 +3,9 @@
 function Config()
 {
     $host = 'localhost'; // адрес сервера 
-    $database = 'romtuck'; // имя базы данных
-    $user = 'root'; // имя пользователя
-    $password = 'admins1N'; // пароль
+    $database = ''; // имя базы данных
+    $user = ''; // имя пользователя
+    $password = ''; // пароль
 
     // подключаемся к серверу
     $link = mysqli_connect($host, $user, $password, $database) 
