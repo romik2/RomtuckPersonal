@@ -17,14 +17,13 @@
           </div>
     
         
-          <h2>Последние действия</h2>
+          <h2>Активные сессии</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Действие</th>
-                  <th>Дата</th>
+                  <th>Номер сессии</th>
                   <th>Пользователь</th>
                 </tr>
               </thead>
@@ -32,7 +31,8 @@
               <?php 
                   include_once('../api/sql.php');
                   SessionSel();
-                  $array = SelectSql("logs", "users", "id", "id_users");
+                  $array = SelectSql("sessions", "users", "id", "id_users");
+                  print_r($array);
                   $k = 0;
                   $i = 0;
                   while ($k < round(count($array) / 24)):
@@ -40,8 +40,7 @@
                 <tr>
                   <td><?php echo $array[$i];?></td>
                   <td><?php echo $array[$i+1]?></td>
-                  <td><?php echo $array[$i+2]?></td>
-                  <td><?php echo $array[$i+8]." (".$array[$i+5]." ".$array[$i+6]." ".$array[$i+7].")";?></td>
+                  <td><?php echo $array[$i+7]." (".$array[$i+4]." ".$array[$i+5]." ".$array[$i+6].")";?></td>
                 </tr>
                 <?php $k++;  $i = $i + 24; endwhile;?>
               </tbody>

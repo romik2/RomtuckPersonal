@@ -25,6 +25,7 @@
                   <th>Название</th>
                   <th>Ссылка на картинку</th>
                   <th>Дата публикации</th>
+                  <th>Действие</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,6 +42,7 @@
                   <td><?php echo $array[$i+1]?></td>
                   <td><?php echo $array[$i+4]?></td>
                   <td><?php echo $array[$i+3]?></td>
+                  <td><a class="w-45 btn btn-md-2 btn-success" href="login.php">Редактировать</a> <a class="w-45 btn btn-md-2 btn-danger" href="/api/del.php?table=sert&id=<?php echo $array[$i]; ?>&Column=id">Удалить</a></td>
                 </tr>
                 <?php $k++;  $i = $i + 24; endwhile;?>
               </tbody>

@@ -16,7 +16,7 @@
             <h1 class="h2">Управление пользователями</h1>
           </div>
           <button class = "btn btn-outline-primary" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Добавить</button>
-          <a class="btn btn-outline-dark" href="login.php">Добавить роль</a>
+          <!-- <a class="btn btn-outline-dark" href="login.php">Добавить роль</a> -->
 
           <div id="id01" class="modal">
   
@@ -41,7 +41,7 @@
                   <th>#</th>
                   <th>ФИО</th>
                   <th>Логин</th>
-                  <th>Роль</th>
+                  <!-- <th>Роль</th> -->
                   <th>Действие</th>
                 </tr>
               </thead>
@@ -58,8 +58,8 @@
                   <td><?php echo $array[$i];?></td>
                   <td><?php echo $array[$i+1]." ".$array[$i+2]." ".$array[$i+3];?></td>
                   <td><?php echo $array[$i+4];?></td>
-                  <td><?php echo $array[$i+6];?></td>
-                  <td><a class="w-45 btn btn-md-2 btn-success" href="login.php">Редактировать</a> <a class="w-45 btn btn-md-2 btn-danger" href="login.php">Удалить</a></td>
+                  <!-- <td><?php echo $array[$i+6];?></td> -->
+                  <td> <!-- <a class="w-45 btn btn-md-2 btn-success" href="login.php">Редактировать</a>--> <a class="w-45 btn btn-md-2 btn-danger" href="/api/del.php?table=users&id=<?php echo $array[$i]; ?>&Column=id">Удалить</a> <a class="w-45 btn btn-md-2 btn-info" href="/api/del.php?table=sessions&id=<?php echo $array[$i]; ?>&Column=id_users">Очистить сесси</a></td>
                 </tr>
                 <?php $k++;  $i = $i + 24; endwhile;?>
               </tbody>

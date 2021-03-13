@@ -3,9 +3,9 @@
 function Config()
 {
     $host = 'localhost'; // адрес сервера 
-    $database = ''; // имя базы данных
-    $user = ''; // имя пользователя
-    $password = ''; // пароль
+    $database = 'romtuck'; // имя базы данных
+    $user = 'root'; // имя пользователя
+    $password = 'admins1N'; // пароль
 
     // подключаемся к серверу
     $link = mysqli_connect($host, $user, $password, $database) 
@@ -74,7 +74,7 @@ function SessionSel()
     {
         $sqls = "SELECT count(sessions.session) FROM sessions INNER JOIN users ON sessions.id_users = users.id WHERE sessions.session = '".$_COOKIE['session']."'";
         $resultsc = mysqli_query(Config(), $sqls);
-    
+        
         while ($row = mysqli_fetch_array($resultsc))
         {
             if($row[0] == 0)
@@ -82,7 +82,17 @@ function SessionSel()
                 echo '<script>location.replace("/api/logout.php");</script>'; exit;
             }
         }
+        
     }
+}
+
+function DelRowMySql($table, $id_rowTable, $column)
+{
+    SessionSel();
+
+    $sql = "DELETE FROM ".$table." WHERE (".$column." = '".$id_rowTable."');";
+  
+    SelectMySql($sql);
 }
 
 ?>
